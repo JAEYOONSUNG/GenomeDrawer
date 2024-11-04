@@ -1,6 +1,6 @@
 # GenomeDrawer
 ## Circos-based genome map visualization tool
-![ATCC12980_genome_map](https://github.com/user-attachments/assets/5c813207-e36c-4b27-89b3-ae211e9b7aa4)
+
 
 
 ## Project Introduction
