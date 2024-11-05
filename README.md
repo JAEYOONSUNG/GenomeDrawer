@@ -121,7 +121,7 @@ source ~/.bash_profile  ## or ~/.bashrc #apply changes
 echo $JAVA_HOME # validation
 ```
 
-## Install DNMB R package
+## Install GenomeDrawer R package
 ```r
 if (!requireNamespace("devtools", quietly = TRUE))
     install.packages("devtools")
@@ -130,7 +130,7 @@ devtools::install_github("JAEYOONSUNG/GenomeDrawer")
 ```
 
 
-## Run DNMB analysis
+## Run GenomeDrawer analysis
 ```r
 setwd([GenBank and gff directory]) # Set the working directory to the location where your GenBank and gff files are stored.
 library(GenomeDrawer)
