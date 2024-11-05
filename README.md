@@ -126,15 +126,15 @@ echo $JAVA_HOME # validation
 if (!requireNamespace("devtools", quietly = TRUE))
     install.packages("devtools")
     
-devtools::install_github("JAEYOONSUNG/DNMB")
+devtools::install_github("JAEYOONSUNG/GenomeDrawer")
 ```
 
 
 ## Run DNMB analysis
 ```r
-setwd([GenBank directory]) # Set the working directory to the location where your GenBank files are stored.
-library(Genome_drawer)
-draw_genome()
+setwd([GenBank and gff directory]) # Set the working directory to the location where your GenBank and gff files are stored.
+library(GenomeDrawer)
+run_drawer()
 ```
 
 **EggNOG-mapper** (Essential)
