@@ -136,6 +136,7 @@ setwd([GenBank and gff directory]) # Set the working directory to the location w
 library(GenomeDrawer)
 run_drawer()
 ```
+- **Note:** [Strain of interest].gff for merging data.
 
 **EggNOG-mapper** (Essential)
 
