@@ -1,5 +1,6 @@
 # GenomeDrawer
 ## Circos-based genome map visualization tool
+![genome_map](https://github.com/user-attachments/assets/1944b5b7-631d-4744-b3b6-c46ac1b4f206)
 
 
 
