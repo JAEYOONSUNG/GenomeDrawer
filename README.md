@@ -137,6 +137,12 @@ setwd([GenBank and gff directory]) # Set the working directory to the location w
 library(GenomeDrawer)
 run_drawer()
 ```
+- Circular Representation:
+-- hen completeness = TRUE, each contig is visualized as a separate circular map, representing it as an independent entity.
+-- This is particularly useful for analyzing genomes with multiple contigs that are not linearized or merged into a single chromosome.
+- Contig-Length Based Linearization:
+-- When completeness = FALSE, all contigs are displayed within a single circular genome map, with each contig’s length proportionally calculated and represented as a segment within the map.
+-- This is ideal for visualizing fragmented assemblies in a comparative genome-wide context.
 - **Note:** [Strain of interest].gff for merging data.
 
 **EggNOG-mapper** (Essential)
