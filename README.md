@@ -177,6 +177,9 @@ Please, cite also the underlying algorithm if it was used for the search step of
                    Ana Hernandez-Plaza, Ivica Letunic, Peer Bork, Jaime Huerta-Cepas. 2021.
                    Molecular Biology and Evolution, msab293, https://doi.org/10.1093/molbev/msab293
 
-[Circos] 
+[Circos] Circos: an information aesthetic for comparative genomics.
+	Martin Krzywinski  1 , Jacqueline Schein, Inanç Birol, Joseph Connors,
+	Randy Gascoyne, Doug Horsman, Steven J Jones, Marco A Marra
+	Genome research, 2009, 19.9: 1639-1645. https://doi: 10.1101/gr.092759.109
 ```
 
