@@ -166,7 +166,7 @@ We hope our resources will prove invaluable to your research in systems biology.
 ## Citation
 If you use this piepline, please cite:
 ```
-[DNMB] DNMB: A Strategic Blueprint for the Domestication of Geobacillus stearothermophilus as a Thermophilic Platform using the DNMB Suite.
+[DNMB] DNMB: A Strategic Blueprint for the Domestication of *Geobacillus stearothermophilus* as a Thermophilic Platform using the DNMB Suite.
              Jae-Yoon Sung, Mun Hoe Lee, Hyungbin Kim, Dariimaa Ganbat, Hyun-Woo Cho, Sang Jae Lee, Seong Bo Kim, and Dong-Woo Lee. 2024.
              XXX, XXX, https://doi.org/XXX
 ```
