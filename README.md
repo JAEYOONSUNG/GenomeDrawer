@@ -94,7 +94,7 @@ JAVA -version
 3.	Restart R or RStudio.
 	
  •	On macOS/Linux:
--If Xcode is not installed, you may encounter compiler issues during package installation. To resolve this, install Xcode from the App Store.
+- If Xcode is not installed, you may encounter compiler issues during package installation. To resolve this, install Xcode from the App Store.
 Add this line to your .bash_profile or .bashrc (depending on the shell):
 ```bash
 # Navigate to your Java installation directory to check available Java versions
@@ -138,11 +138,11 @@ library(GenomeDrawer)
 run_drawer()
 ```
 - Circular Representation:
--- hen completeness = TRUE, each contig is visualized as a separate circular map, representing it as an independent entity.
--- This is particularly useful for analyzing genomes with multiple contigs that are not linearized or merged into a single chromosome.
+ When completeness = TRUE, each contig is visualized as a separate circular map, representing it as an independent entity.
+ This is particularly useful for analyzing genomes with multiple contigs that are not linearized or merged into a single chromosome.
 - Contig-Length Based Linearization:
--- When completeness = FALSE, all contigs are displayed within a single circular genome map, with each contig’s length proportionally calculated and represented as a segment within the map.
--- This is ideal for visualizing fragmented assemblies in a comparative genome-wide context.
+ When completeness = FALSE, all contigs are displayed within a single circular genome map, with each contig’s length proportionally calculated and represented as a segment within the map.
+ This is ideal for visualizing fragmented assemblies in a comparative genome-wide context.
 - **Note:** [Strain of interest].gff for merging data.
 
 **EggNOG-mapper** (Essential)
