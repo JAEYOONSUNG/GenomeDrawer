@@ -1,0 +1,36 @@
+Package: GenomeDrawer
+Title: GenomeDrawer
+Version: 1.0.0
+Authors@R: 
+    person("Jae-Yoon", "Sung", , "o3wodbs@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-2475-8743"))
+Description: Our pipeline integrates multiple scripts and computational tools to streamline for genome map from GenBank file.
+License: MIT
+Encoding: UTF-8
+Imports:
+    Biostrings,
+    ComplexHeatmap,
+    Peptides,
+    circlize,
+    gtools,
+    ggplot2,
+    ggseqlogo,
+    grid,
+    gridExtra,
+    openxlsx,
+    plyr,
+    dplyr,
+    tidyr,
+    readr,
+    reshape2,
+    seqinr,
+    stringr,
+    data.table,
+    tibble,
+    qdap,
+    openxlsx
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
