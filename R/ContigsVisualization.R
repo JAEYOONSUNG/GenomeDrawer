@@ -229,24 +229,33 @@ ContigsVisualization <- function(fna_count = NULL, completeness = FALSE, gb_dir 
     }
   })
 
-
-  calculate_dynamic_ylim <- function(gc_data, type, scale_factor) {  # scale_factor를 더 낮게 설정
-    if (!is.null(gc_data) && nrow(gc_data) > 0) {
-      valid_values <- as.numeric(gc_data[[paste0(type, "_minus_average")]])
-      if (any(!is.na(valid_values))) {
-        max_range <- max(abs(valid_values), na.rm = TRUE)
-        if (max_range == 0) {
-          # Prevent ylim from having the same values
-          return(c(-0.15, 0.15))  # Default smaller range
+  # Function to calculate global ylim for a given type across all contigs
+  calculate_global_ylim <- function(factors, type, scale_factor = 1.2) {  # Increased scale_factor
+    max_range <- 0
+    for (i in seq_along(factors)) {
+      mapped_index <- paste0("window_contig_", i, "_seq")
+      if (exists(mapped_index, inherits = TRUE)) {
+        gc_data <- get(mapped_index, inherits = TRUE)
+        if (!is.null(gc_data) && nrow(gc_data) > 0) {
+          valid_values <- as.numeric(gc_data[[paste0(type, "_minus_average")]])
+          if (any(!is.na(valid_values))) {
+            max_range <- max(max_range, max(abs(valid_values), na.rm = TRUE))
+          }
         }
-        return(c(-max_range * scale_factor, max_range * scale_factor))
       }
     }
-    return(c(-0.15, 0.15))  # Default smaller range
+    if (max_range == 0) {
+      return(c(-0.1, 0.1))  # Reduced default range for tighter control
+    }
+    return(c(-max_range * scale_factor, max_range * scale_factor))
   }
 
+  # Replace the GC skew and GC ratio plotting loop with this
   for (type in c("gc_skew", "gc_ratio")) {
-    circos.track(bg.col = NA, bg.border = FALSE, track.height = 0.12, panel.fun = function(x, y) {
+    # Compute global ylim for this type
+    ylim <- calculate_global_ylim(factors, type, scale_factor = 1.2)
+
+    circos.track(bg.col = NA, bg.border = FALSE, track.height = 0.08, panel.fun = function(x, y) {  # Reduced track.height
       sector_index <- CELL_META$sector.index
       contig_index <- which(factors == sector_index)
 
@@ -257,8 +266,6 @@ ContigsVisualization <- function(fna_count = NULL, completeness = FALSE, gb_dir 
           gc_data <- get(mapped_index, inherits = TRUE)
 
           if (!is.null(gc_data) && nrow(gc_data) > 0 && any(!is.na(gc_data[[paste0(type, "_minus_average")]]))) {
-            ylim <- calculate_dynamic_ylim(gc_data, type, scale_factor = 0.15)  # Adjusted scale_factor
-
             circos.barplot(
               value = as.numeric(gc_data[[paste0(type, "_minus_average")]]),
               pos = (gc_data$start + gc_data$end) / 2,
@@ -275,8 +282,9 @@ ContigsVisualization <- function(fna_count = NULL, completeness = FALSE, gb_dir 
       } else {
         message(paste("Sector index", sector_index, "not found in factors."))
       }
-    }, ylim = calculate_dynamic_ylim(get(paste0("window_contig_", contig_index, "_seq"), inherits = TRUE), type))
+    }, ylim = ylim)
   }
+
 
   # Add genome name and total base pairs at the center
   text(0, 0, paste(Genome_summary$File,
